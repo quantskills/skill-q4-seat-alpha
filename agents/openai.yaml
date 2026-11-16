@@ -1,0 +1,4 @@
+interface:
+  display_name: "Futures Seat-Position Alpha"
+  short_description: "Compute and validate futures seat factors against a frozen CTA baseline"
+  default_prompt: "Use $seat-alpha to compute F1/F5/F6/F8 seat factors, run the weekly backtest, and validate look-ahead and out-of-sample behavior."

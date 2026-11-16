@@ -1,0 +1,41 @@
+{
+  "name": "seat-alpha",
+  "version": "1.0.0",
+  "description": "Futures seat-position Alpha factors with look-ahead, OOS and overfit checks",
+  "author": "fuzijun",
+  "created_date": "2026-11-16",
+  "tags": ["quant", "alpha", "factor", "futures", "seat-position"],
+  "category": "alpha-factor",
+  "spec": {
+    "factor_id": "Q4",
+    "factor_name": "seat_ensemble",
+    "factor_type": "cross-sectional",
+    "data_source": "PandaData"
+  },
+  "dependencies": {
+    "python": ">=3.10",
+    "pandas": ">=1.3.0",
+    "numpy": ">=1.20.0",
+    "scipy": ">=1.7.0",
+    "pyarrow": ">=10.0.0",
+    "pandadata": "latest"
+  },
+  "scripts": {
+    "factor": "scripts/factor.py",
+    "backtest": "scripts/backtest.py",
+    "validate": "scripts/validate.py",
+    "test": "scripts/test.py"
+  },
+  "config": {
+    "top_k": 3,
+    "cost_bps": 1.5,
+    "lag": 0,
+    "f1_window": 5,
+    "f5_window": 60
+  },
+  "production": {
+    "output_format": "parquet",
+    "update_frequency": "daily",
+    "retention_period": "1_year"
+  }
+}

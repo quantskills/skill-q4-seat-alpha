@@ -1,0 +1,24 @@
+---
+description: Use the Futures Seat-Position Alpha skill to compute seat factors and test them against a frozen CTA baseline.
+alwaysApply: false
+---
+
+# Futures Seat-Position Alpha Skill
+
+When the user asks to build or audit futures seat factors, compare seat signals with CTA, check publication lag sensitivity, or reproduce the Q4 seat-signal study, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/seat-alpha
+```
+
+Workflow:
+
+1. Read `.cursor/skills/seat-alpha/SKILL.md`.
+2. For data contracts and baseline files, read `.cursor/skills/seat-alpha/references/data_guide.md`.
+3. Use the local `pandadata-api` skill to verify method parameters before any real API call.
+4. Set PANDA_DATA_USERNAME and PANDA_DATA_PASSWORD before fetching data, or pass `--data-dir`.
+5. Run `scripts/validate.py` before trusting any result; report failures verbatim.
+6. Preserve factor definitions, broker lists, execution timing, cost assumptions, and data dates.
+7. Do not invent data interfaces, fields, factors, or trading advice.
